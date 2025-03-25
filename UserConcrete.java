@@ -28,39 +28,3 @@ class UserConcrete implements User {
     }
 }
 
-class Student extends UserConcrete {
-    public Student(String email, String username, String password) {
-        super(email, username, password, "Student");
-    }
-}
-
-class Faculty extends UserConcrete {
-    public Faculty(String email, String username, String password) {
-        super(email, username, password, "Faculty");
-    }
-}
-
-class Visitor extends UserConcrete {
-    public Visitor(String email, String username, String password) {
-        super(email, username, password, "Visitor");
-    }
-}
-
-class ManagementTeamMember extends UserConcrete {
-    public ManagementTeamMember(String email, String username, String password) {
-        super(email, username, password, "Management Team");
-    }
-}
-class SuperManager extends UserConcrete {
-    private static SuperManager instance;
-    private SuperManager() {
-        super("supermanager@example.com", "SuperManager", "adminPass", "Super Manager");
-    }
-    public static SuperManager getInstance() {
-        if (instance == null) {
-            instance = new SuperManager();
-        }
-        return instance;
-    }
-}
-

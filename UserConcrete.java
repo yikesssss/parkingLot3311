@@ -11,14 +11,40 @@ class UserConcrete implements User {
         this.userType = userType;
     }
 
+   
     public void register() {
-        System.out.println(userType + " account registered: " + email);
+        Database db = Database.getInstance("users.csv");
+        
+        
+        for (User u : db.users) {
+            if (u.email.equals(this.email)) {
+                System.out.println("Error: Email already registered.");
+                return;
+            }
+        }
+
+        db.users.add(this);
+        try {
+            db.update("users.csv");
+            System.out.println(userType + " account successfully registered: " + email);
+        } catch (Exception e) {
+            System.out.println("Error registering user: " + e.getMessage());
+        }
     }
 
     public boolean login(String email, String password) {
-        return this.email.equals(email) && this.password.equals(password);
-    }
+        Database db = Database.getInstance("users.csv");
 
+        for (User u : db.users) {
+            if (u.email.equals(email) && u.password.equals(password)) {
+                System.out.println("Login successful: " + email);
+                return true;
+            }
+        }
+
+        System.out.println("Login failed: Invalid email or password.");
+        return false;
+    }
     public boolean validateEmail() {
         return email.contains("@");
     }

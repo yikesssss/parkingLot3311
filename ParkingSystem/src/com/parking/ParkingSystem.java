@@ -6,9 +6,14 @@ import java.util.Scanner;
 public class ParkingSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+// Initialize Database Singleton
+        DatabaseSingleton database = DatabaseSingleton.getInstance();
 
+        // Create ParkingLotManager Singleton
+        ParkingLotManager manager = ParkingLotManager.getInstance();
         // Creating a basic parking spot
         ParkingSpot spot = new ParkingSpot(101, "Zone A", "Lot 5");
+          manager.addParkingSpot(spot);
 
         System.out.println("You selected: " + spot.getDetails());
         System.out.println("Would you like to add extra features?");
@@ -37,7 +42,7 @@ public class ParkingSystem {
                     System.out.println("Covered Parking added.");
                     break;
                 case 4:
-                    addingFeatures = false;
+                    addingFeatures = false; //to exit loop and get final details 
                     break;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -45,6 +50,10 @@ public class ParkingSystem {
         }
 
         System.out.println("Final Parking Spot Details: " + spot.getDetails());
+
+       ParkingSpot fetchedSpot = database.getParkingSpot(101);
+        System.out.println("Fetched Parking Spot: " + fetchedSpot.getDetails());
+        
         scanner.close();
     }
 }

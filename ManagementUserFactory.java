@@ -1,3 +1,4 @@
+package com;
 class ManagementUserFactory extends UserAbstractFactory {
     public User createUser(String userType, String email, String username, String password) {
         if (userType.equals("Management Team")) {

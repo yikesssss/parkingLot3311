@@ -1,3 +1,4 @@
+package com;
 class FactoryProducer {
     public static UserAbstractFactory getFactory(boolean isClient) {
         if (isClient) {

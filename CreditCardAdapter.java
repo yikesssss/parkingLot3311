@@ -1,5 +1,7 @@
+package com;
+
 class CreditCardAdapter implements PaymentGateway {
-    private CreditCardPayment creditCardPayment;
+    protected CreditCardPayment creditCardPayment;
     
     public CreditCardAdapter() {
         this.creditCardPayment = new CreditCardPayment();

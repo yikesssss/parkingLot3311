@@ -1,3 +1,5 @@
+package com;
+
 class ClientUserFactory extends UserAbstractFactory {
     public User createUser(String userType, String email, String username, String password) {
         switch (userType) {

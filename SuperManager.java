@@ -1,3 +1,4 @@
+package com;
 class SuperManager extends ManagementTeamMember {
     private static SuperManager instance;
 

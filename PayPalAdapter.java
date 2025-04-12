@@ -1,5 +1,6 @@
+package com;
 class PayPalAdapter implements PaymentGateway {
-    private PayPalPayment payPalPayment;
+    protected PayPalPayment payPalPayment;
     
     public PayPalAdapter() {
         this.payPalPayment = new PayPalPayment();
@@ -27,3 +28,4 @@ class PayPalAdapter implements PaymentGateway {
         System.out.println("Refund Issued for PayPal Transaction: " + transactionID);
     }
 }
+

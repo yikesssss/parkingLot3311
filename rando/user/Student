@@ -1,0 +1,28 @@
+email,username,password,userType
+supermanager@example.com,SuperManager,adminPass,Management Team
+hi!,,,Faculty
+hi!,hi!,,Management Team
+,,,Management Team
+hi!,hi!,adminPass,Management Team
+adminPass,hi!,,Management Team
+hi!,hi!,adminPass,Management Team
+adminPass,Student,,Management Team
+hi!,hi!,,Management Team
+,,,Management Team
+adminPass,SuperManager,adminPass,Management Team
+hi!,hi!,,Management Team
+Student,hi!,,Management Team
+,,,Management Team
+,,Management Team,Management Team
+adminPass,SuperManager,adminPass,Management Team
+hi!,hi!,,Management Team
+Student,hi!,,Management Team
+,,,Management Team
+hi!,hi!,,Management Team
+adminPass,SuperManager,adminPass,Management Team
+hi!,hi!,adminPass,Management Team
+Student,Management Team,Management Team,Management Team
+Visitor,hi!,hi!,Management Team
+adminPass,SuperManager,adminPass,Management Team
+Student,,SuperManager,Management Team
+Management Team,Student,adminPass,
